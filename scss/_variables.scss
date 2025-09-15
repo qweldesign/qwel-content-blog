@@ -1,2 +1,15 @@
 // Variables
 
+$colors:             (
+  primary:             hsl(200, 75%, 50%),
+  secondary:           hsl(30, 100%, 75%),
+  tertiary:            hsl(80, 60%, 50%)
+);
+
+$grid-base:    5rem;
+
+$breakpoints:  (
+  sm:            600px,
+  md:            800px,
+  lg:           1000px
+);

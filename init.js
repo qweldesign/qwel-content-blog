@@ -1,135 +1,67 @@
-import { createApp } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.0/vue.esm-browser.prod.js';
+// Posts
+(async () => {
+  // 記事データを取得
+  const res = await fetch('./posts.json');
+  const content = await res.json();
 
-const data = {
-  data() {
-    return {
-      sections: {
-        feature: {
-          id: 'feature',
-          name: 'feature',
-          items: [
-            {
-              heading: 'feature-1',
-              src: './assets/sampleImg00.jpg'
-            },
-            {
-              heading: 'feature-2',
-              src: './assets/sampleImg01.jpg'
-            },
-            {
-              heading: 'feature-3',
-              src: './assets/sampleImg02.jpg'
-            },
-            {
-              heading: 'feature-4',
-              src: './assets/sampleImg03.jpg'
-            }
-          ]
-        },
-        about: {
-          id: 'about',
-          name: 'about',
-          heading: 'Mission',
-          excerpt: 'Our mission is ...',
-          src: './assets/sampleImg01.jpg',
-          more: 'read more'
-        },
-        service: {
-          id: 'service',
-          name: 'service',
-          more: 'read more',
-          items: [
-            {
-              date: '2025-04-01',
-              heading: 'service-1',
-              tags: ['news', 'info'],
-              excerpt: 'Today is ...',
-              src: './assets/sampleImg02.jpg'
-            },
-            {
-              date: '2025-04-02',
-              heading: 'service-2',
-              tags: ['news'],
-              excerpt: 'Today is ...',
-              src: './assets/sampleImg03.jpg'
-            },
-            {
-              date: '2025-04-03',
-              heading: 'service-3',
-              tags: ['info'],
-              excerpt: 'Today is ...',
-              src: './assets/sampleImg04.jpg'
-            }
-          ]
-        },
-        news: {
-          id: 'news',
-          name: 'news',
-          more: 'read more',
-          items: [
-          {
-              date: '2025-04-01',
-              heading: 'news-1',
-              tags: ['news', 'info'],
-              excerpt: 'Today is ...',
-              src: './assets/sampleImg03.jpg'
-            },
-            {
-              date: '2025-04-02',
-              heading: 'news-2',
-              tags: ['news'],
-              excerpt: 'Today is ...',
-              src: './assets/sampleImg04.jpg'
-            },
-            {
-              date: '2025-04-03',
-              heading: 'news-3',
-              tags: ['info'],
-              excerpt: 'Today is ...',
-              src: './assets/sampleImg05.jpg'
-            }
-          ]
-        },
-        team: {
-          id: 'team',
-          name: 'team',
-          heading: 'Mission',
-          excerpt: 'Our mission is ...',
-          src: './assets/sampleImg04.jpg',
-          more: 'read more'
-        },
-        access: {
-          id: 'access',
-          name: 'access',
-          src: 'https://www.google.com/maps/embed'
-        },
-        contact: {
-          id: 'contact',
-          name: 'contact',
-          description: 'サンプルデモであるため、このフォームは機能しません。'
-        }
-      },
-      social: {
-        x: true,
-        facebook: true,
-        instagram: true,
-        youtube: false
-      }
-    };
-  }
-}
+  // Breadcrumb
+  const createBreadcrumbItem = (tag, text, href = null, isCurrent = false) => {
+    const li = document.createElement('li');
+    li.classList.add('breadcrumb__item');
+    if (isCurrent) li.classList.add('breadcrumb__item--current');
 
-createApp(data).mount('#app');
+    const el = document.createElement(tag);
+    el.textContent = text;
+    if (href) el.setAttribute('href', href);
 
-// Header toggle
-window.addEventListener('scroll', () => {
-  const header = document.getElementById('header');
-  if (0 < window.scrollY) {
-    header.classList.add('is-active');
-  } else {
-    header.classList.remove('is-active');
-  }
-});
+    li.appendChild(el);
+    return li;
+  };
+
+  const updateBreadcrumb = () => {
+    const params = new URLSearchParams(location.search);
+    const slug = params.get('post') || 'about';
+
+    const title = content.find(post => post.slug === slug)?.title || '';
+
+    const breadcrumb = document.getElementById('breadcrumb');
+    breadcrumb.innerHTML = '';
+
+    // Root
+    breadcrumb.appendChild(createBreadcrumbItem('a', 'QWEL in Action', 'https://qwel.design/'));
+
+    if (slug == 'about') {
+      // /Blog/
+      breadcrumb.appendChild(createBreadcrumbItem('span', 'Blog', null, true));
+    } else {
+      // /Blog/?post=xxx
+      breadcrumb.appendChild(createBreadcrumbItem('a', 'Blog', './blog/'));
+      breadcrumb.appendChild(createBreadcrumbItem('span', title, null, true));
+    }
+  };
+
+  // 最初と、URL変更時に毎回実行
+  updateBreadcrumb();
+  window.addEventListener('popstate', updateBreadcrumb);
+
+  // Posts
+  const list = document.getElementById('post');
+  const template = document.getElementById('postTemplate');
+  content.forEach((post) => {
+    const item = template.content.cloneNode(true);
+    const a = item.querySelector('a');
+    const img = a.querySelector('.post__image');
+    const date = a.querySelector('.post__date');
+    const title = a.querySelector('.post__title');
+    a.setAttribute('href', `./?post=${post.slug}`);
+    img.setAttribute('src', `./images${post.imgUrl}`)
+    date.textContent = post.date;
+    title.textContent = post.title;
+    list.appendChild(item);
+  });
+
+})();
+
 
 // Auto Copyright
 import AutoCopyright from './js/autoCopyright.js';
@@ -140,33 +72,13 @@ import BackToTop from './js/backToTop.js';
 new BackToTop();
 
 // Drawer Menu
-import DrawerMenu from './js/drawerMenu.js';
-new DrawerMenu();
-
-// Embed
-import Embed from './js/embed.js';
-new Embed();
-
-// Fader
-import Fader from './js/fader.js';
-new Fader();
-
-// Modal
-import Modal from './js/modal.js';
-new Modal();
+//import DrawerMenu from './js/drawerMenu.js';
+//new DrawerMenu();
 
 // Preloader
-import Preloader from './js/preloader.js';
-new Preloader();
+//import Preloader from './js/preloader.js';
+//new Preloader();
 
-// Responsive Color
-import ResponsiveColor from './js/responsiveColor.js';
-new ResponsiveColor();
-
-// Reveal On Scroll
-import RevealOnScroll from './js/revealOnScroll.js';
-new RevealOnScroll();
-
-// Slider
-import Slider from './js/slider.js';
-new Slider();
+// Router
+import Router from './js/router.js';
+new Router('/blog/', 'about');

@@ -103,7 +103,7 @@ $icon-size-lg:     3rem !default;
       transform: rotate(45deg) translate(-10%, -10%);
     }
 
-    .icon--chevron-left & {
+    .icon--chevron-inline-start & {
       width: 30%;
       height: 30%;
       margin: 35%;
@@ -112,7 +112,7 @@ $icon-size-lg:     3rem !default;
       transform: rotate(45deg) translate(10%, -10%);
     }
 
-    .icon--chevron-right & {
+    .icon--chevron-inline-end & {
       width: 30%;
       height: 30%;
       margin: 35%;

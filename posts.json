@@ -1,0 +1,20 @@
+[
+  {
+    "date": "2019-03-06",
+    "title": "シュタイナー教育の私的見解",
+    "slug": "private-view-of-waldorf-education",
+    "imgUrl": "/about/fig_about.jpg"
+  },
+  {
+    "date": "2019-02-16",
+    "title": "ユーリ・ノルシュテインの映像作品",
+    "slug": "yurinorstein",
+    "imgUrl": "/yurinorstein/yurinorstein04.jpg"
+  },
+  {
+    "date": "2018-12-15",
+    "title": "世界で最初のプログラマー エイダ・ラブレス",
+    "slug": "ada-lovelace",
+    "imgUrl": "/ada-lovelace/ada_story.jpg"
+  }
+]

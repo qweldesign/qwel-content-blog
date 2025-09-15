@@ -28,32 +28,30 @@
 
 // Layout
 @import "header";
-@import "gNav";
 @import "footer";
 
 // Components
 @import "icon";
 @import "backToTop";
+@import "breadcrumb";
 @import "button";
-@import "cover";
+//@import "cover";
 @import "drawerMenu";
-@import "embed";
+//@import "embed";
 @import "modal";
 @import "preloader";
-@import "responsiveColor";
+//@import "responsiveColor";
 @import "revealOnScroll";
-@import "slider";
+//@import "slider";
 
 // Projects
-@import "hero";
-@import "section";
-@import "postItem";
-@import "postList";
-@import "form";
+@import "main";
+@import "article";
+@import "post";
 
 // Utility
 //@import "utilities/flex";
 //@import "utilities/flexItem";
-@import "utilities/spacing";
-@import "utilities/text";
-@import "utilities/visibility";
+//@import "utilities/spacing";
+//@import "utilities/text";
+//@import "utilities/visibility";
