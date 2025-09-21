@@ -1,21 +1,20 @@
 <?php
-require_once __DIR__ . '/inc/blog.php';
-require_once __DIR__ . '/inc/parsedown.php';
-$Parsedown = new Parsedown();
+require_once __DIR__ . '/inc/ContentLoader.php';
+require_once __DIR__ . '/inc/Parsedown.php';
 
 $dir   = __DIR__ . '/content/';
 $slug  = $_GET['slug'] ?? 'about';
 $count = (int)($_GET['count'] ?? 10);
 $page  = (int)($_GET['page'] ?? 1);
 
-$posts = load_all_articles($dir);
+$loader    = new ContentLoader($dir);
+$parsedown = new Parsedown();
+
+$posts = $loader->load();
 $posts = array_slice($posts, $count * ($page - 1), $count);
 
-$post = find_article_by_slug($slug, $dir);
-if (!$post) {
-  $content = "<h2>記事が見つかりません</h2><p>指定された記事は存在しないか、削除された可能性があります。</p>";
-}
-$content = $Parsedown->text($post['content']);
+$article = $loader->find($slug);
+$content = $parsedown->text($article['content']);
 
 ?>
 
@@ -24,7 +23,11 @@ $content = $Parsedown->text($post['content']);
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>鋤と鉋とプログラミング - 子ども向けプログラミング教室講師ブログ</title>
+    <?php if ($article) { ?>
+      <title><?php echo $article['title'] . ' | '; ?>鋤と鉋とプログラミング</title>
+    <?php } else { ?>
+      <title>鋤と鉋とプログラミング - 子ども向けプログラミング教室講師ブログ</title>
+    <?php } ?>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Zen+Old+Mincho:wght@600&display=swap" rel="stylesheet">
@@ -38,12 +41,12 @@ $content = $Parsedown->text($post['content']);
         <li class="breadcrumb__item">
           <a href="https://qwel.design/">QWEL in Action</a>
         </li>
-        <?php if ($slug !== 'about' && $post) { ?>
+        <?php if ($slug !== 'about' && $article) { ?>
           <li class="breadcrumb__item">
             <a href="/">Blog</a>
           </li>
           <li class="breadcrumb__item is-current">
-            <span><?php echo $post['title']; ?></span>
+            <span><?php echo $article['title']; ?></span>
           </li>
         <?php } else { ?>
           <li class="breadcrumb__item is-current">
