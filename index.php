@@ -3,33 +3,9 @@
 //ini_set('display_startup_errors', 1);
 //error_reporting(E_ALL);
 
-require_once __DIR__ . '/inc/ContentLoader.php';
-require_once __DIR__ . '/inc/ContentNavigation.php';
-require_once __DIR__ . '/inc/Parsedown.php';
-
-$dir   = __DIR__ . '/content/';
-$slug  = $_GET['slug'] ?? 'about';
-$count = (int)($_GET['count'] ?? 10);
-$page  = (int)($_GET['page'] ?? 1);
-
-$loader    = new ContentLoader($dir);
-$nav       = new ContentNavigation([
-  'topLabel'    => 'QWEL in Action',
-  'topPath'     => 'https://qwel.design',
-  'subdirLabel' => 'Blog',
-  'subdirPath'  => '/'
-]);
-$parsedown = new Parsedown();
-
-$posts = $loader->load();
-$posts = array_slice($posts, $count * ($page - 1), $count);
-
-$article = $loader->find($slug);
-$content = $parsedown->text($article['content']);
-
-$breadcrumb = isset($_GET['slug']) ?
-  $nav->breadcrumb($article) : $nav->breadcrumb();  
-
+// Qwel start!
+require_once __DIR__ . '/inc/Qwel.php';
+$cms = new Qwel();
 ?>
 
 <!DOCTYPE html>
@@ -37,8 +13,8 @@ $breadcrumb = isset($_GET['slug']) ?
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php if ($article) { ?>
-      <title><?php echo $article['title'] . ' | '; ?>鋤と鉋とプログラミング</title>
+    <?php if (!$cms->is_about()) { ?>
+      <title><?php echo $cms->get_title() . ' | '; ?>鋤と鉋とプログラミング</title>
     <?php } else { ?>
       <title>鋤と鉋とプログラミング - 子ども向けプログラミング教室講師ブログ</title>
     <?php } ?>
@@ -51,7 +27,7 @@ $breadcrumb = isset($_GET['slug']) ?
   <body>
     <header class="header">
       <div id="logo"><a href="https://qwel.design/"><img src="/logo_animation.svg" alt="QWEL in Action"></a></div>
-      <?php echo $breadcrumb; ?> 
+      <?php echo $cms->get_breadcrumb(); ?> 
     </header>
     <main class="main">
       <div class="main__container">
@@ -60,18 +36,18 @@ $breadcrumb = isset($_GET['slug']) ?
         </h1>
         <div class="main__content">
           <article class="article">
-            <?php echo $content ?>
+            <?php echo $cms->get_content() ?>
           </article>
         </div>
         <div class="main__aside">
           <h2>新着記事</h2>
           <ul id="post" class="post">
           <?php
-          foreach ($posts as $post) {
+          foreach ($cms->get_posts() as $post) {
           ?>
             <li class="post__item">
               <a href="/<?php echo $post['slug']; ?>/">
-                <img class="post__image" src="/images/<?php echo $post['img']; ?>">
+                <img class="post__image" src="<?php echo $post['img']; ?>">
                 <span class="post__date"><?php echo $post['date']; ?></span>
                 <span class="post__title"><?php echo $post['title']; ?></span>
               </a>

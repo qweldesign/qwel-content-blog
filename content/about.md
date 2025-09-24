@@ -1,7 +1,7 @@
 ---
 title: "このブログについて"
 slug: "about"
-img: "/about/fig_story.jpg"
+img: "/content/images/about/fig_story.jpg"
 date: "2018-12-10"
 ---
 
@@ -20,7 +20,7 @@ date: "2018-12-10"
 
 双極的な考え方に偏ると、「自然の恩恵」と「プログラミング」という2つのキーワードはほとんど交わり合うことがありませんが、僕はこの土地でこそ、自分らしい何か新しい試みをできるのではないか、という期待を寄せています。
 
-![星の王子さまオマージュ挿絵1](/images/about/fig_about.jpg)
+![星の王子さまオマージュ挿絵1](/content/images/about/fig_about.jpg)
 
 ### 鋤と鉋に続くもの
 
@@ -45,4 +45,4 @@ date: "2018-12-10"
 
 プログラマーは何をすべきでしょうか。それは、自然の中に表現したい「カタチ」を、自ら見つけ出すことではないでしょうか。
 
-![星の王子さまオマージュ挿絵2](/images/about/fig_story.jpg)
+![星の王子さまオマージュ挿絵2](/content/images/about/fig_story.jpg)

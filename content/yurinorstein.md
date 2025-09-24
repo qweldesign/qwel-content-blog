@@ -1,7 +1,7 @@
 ---
 title: "ユーリ・ノルシュテインの映像作品"
 slug: "yurinorstein"
-img: "/yurinorstein/yurinorstein04.jpg"
+img: "/content/images/yurinorstein/yurinorstein04.jpg"
 date: "2019-02-16"
 ---
 
@@ -17,15 +17,15 @@ date: "2019-02-16"
 
 どこか暗く、淋しいけれど、静寂な美しさを感じる作品です。
 
-![霧の中のハリネズミ - フクロウとの遭遇](/images/yurinorstein/yurinorstein00.jpg)
+![霧の中のハリネズミ - フクロウとの遭遇](/content/images/yurinorstein/yurinorstein00.jpg)
 
-![霧の中のハリネズミ - 楢の大木との出逢い](/images/yurinorstein/yurinorstein01.jpg)
+![霧の中のハリネズミ - 楢の大木との出逢い](/content/images/yurinorstein/yurinorstein01.jpg)
 
-![霧の中のハリネズミ - 川に落ちたハリネズミ](/images/yurinorstein/yurinorstein02.jpg)
+![霧の中のハリネズミ - 川に落ちたハリネズミ](/content/images/yurinorstein/yurinorstein02.jpg)
 
-![霧の中のハリネズミ - 川に映る星空](/images/yurinorstein/yurinorstein03.jpg)
+![霧の中のハリネズミ - 川に映る星空](/content/images/yurinorstein/yurinorstein03.jpg)
 
-![霧の中のハリネズミ - ランプに群がる蛾](/images/yurinorstein/yurinorstein04.jpg)
+![霧の中のハリネズミ - ランプに群がる蛾](/content/images/yurinorstein/yurinorstein04.jpg)
 
 ### 話の話
 
@@ -35,11 +35,11 @@ date: "2019-02-16"
 
 童話の世界か、森の奥か、彼の故郷は分かりませんが、二足歩行で歩く狼の子が、好奇心に駆られて、ある民家から詩人の詩を持ち去って行きます。途中、その詩が思わぬ物に姿を変えるシーンが印象的です。  
 
-![話の話 - 狼の子が民家に入っていく](/images/yurinorstein/yurinorstein05.jpg)
+![話の話 - 狼の子が民家に入っていく](/content/images/yurinorstein/yurinorstein05.jpg)
 
-![話の話 - 乳飲み子を見つめる狼の子](/images/yurinorstein/yurinorstein06.jpg)
+![話の話 - 乳飲み子を見つめる狼の子](/content/images/yurinorstein/yurinorstein06.jpg)
 
-![話の話 - 漁師の家の風景](/images/yurinorstein/yurinorstein07.jpg)
+![話の話 - 漁師の家の風景](/content/images/yurinorstein/yurinorstein07.jpg)
 
 ### 感動はどこから生まれるのか
 

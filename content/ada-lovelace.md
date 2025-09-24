@@ -1,7 +1,7 @@
 ---
 title: "世界で最初のプログラマー エイダ・ラブレス"
 slug: "ada-lovelace"
-img: "/ada-lovelace/ada_story.jpg"
+img: "/content/images/ada-lovelace/ada_story.jpg"
 date: "2018-12-15"
 ---
 
@@ -21,7 +21,7 @@ date: "2018-12-15"
 
 ### エイダ・ラブレス
 
-![エイダ・ラブレス肖像](/images/ada-lovelace/ada_lovelace_1838.jpg)
+![エイダ・ラブレス肖像](/content/images/ada-lovelace/ada_lovelace_1838.jpg)
 
 > ラブレース伯爵夫人オーガスタ・エイダ・キング（Augusta Ada King, Countess of Lovelace, 1815年12月10日 – 1852年11月27日）は、19世紀のイギリスの貴族の女性。
 >
@@ -55,7 +55,7 @@ IT企業として大手であるマイクロソフトやグーグルも、エイ
 
 ### 階差機関（ディファレンス・エンジン）
 
-![階差機関（ディファレンス・エンジン）](/images/ada-lovelace/difference_engine.jpg)
+![階差機関（ディファレンス・エンジン）](/content/images/ada-lovelace/difference_engine.jpg)
 
 エイダの最初の人生の転機は、「階差機関（ディファレンス・エンジン）」と呼ばれる現代の電卓のような機械との出会いでした。
 
@@ -69,7 +69,7 @@ IT企業として大手であるマイクロソフトやグーグルも、エイ
 
 ### 解析機関（アナリティカル・エンジン）
 
-![解析機関（アナリティカル・エンジン）](/images/ada-lovelace/analytical_machine.jpg)
+![解析機関（アナリティカル・エンジン）](/content/images/ada-lovelace/analytical_machine.jpg)
 
 エイダは、師のバベッジに慕って、「解析機関（アナリティカル・エンジン）」と呼ばれる現代のコンピューターの原型のような機械の発明において、プログラムのコードを作る手伝いをしたそうです。
 
@@ -85,7 +85,7 @@ IT企業として大手であるマイクロソフトやグーグルも、エイ
 
 しかしその理論は、後世にコンピューターを開発したプログラマー達を驚かせる内容だったとのことです。
 
-![絵本「世界でさいしょのプログラマー - エイダ・ラブレスのものがたり」](/images/ada-lovelace/ada_story.jpg)
+![絵本「世界でさいしょのプログラマー - エイダ・ラブレスのものがたり」](/content/images/ada-lovelace/ada_story.jpg)
 
 この話は、「世界でさいしょのプログラマー – エイダ・ラブレスのものがたり」という子供向けの絵本に詳しく書かれています。
 

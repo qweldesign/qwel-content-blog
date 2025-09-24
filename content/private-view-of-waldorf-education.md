@@ -1,7 +1,7 @@
 ---
 title: "シュタイナー教育の私的見解"
 slug: "private-view-of-waldorf-education"
-img: "/about/fig_about.jpg"
+img: "/content/images/about/fig_about.jpg"
 date: "2019-03-06"
 ---
 
